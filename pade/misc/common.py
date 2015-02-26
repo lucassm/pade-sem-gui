@@ -37,9 +37,7 @@
 
 import twisted.internet
 from pade.acl.aid import AID
-from pade.core.sniffer import SnifferFactory
 from pade.core.ams import AgentManagementFactory
-from pade.gui.interface import ControlAgentsGui
 import optparse
 
 #=========================================================================
@@ -70,15 +68,7 @@ def start_loop(agents, gui=False):
     global AMS
 
     if gui:
-        controlAgentsGui = ControlAgentsGui()
-        controlAgentsGui.show()
-
-        # instancia um AID para o agente Sniffer
-        aid = AID('Sniffer_Agent')
-        # instancia um objeto Factory para o agente Sniffer
-        snifferFactory = SnifferFactory(aid, AMS, controlAgentsGui.ui)
-        # lança o agente como servidor na porta gerada pelo objeto AID
-        twisted.internet.reactor.listenTCP(aid.port, snifferFactory)
+        pass
 
     i = 0
     for agent in agents:

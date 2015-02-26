@@ -1,10 +1,3 @@
-try:
-    from PySide import QtGui
-    import sys
-    app = QtGui.QApplication(sys.argv)
-    import qt4reactor
-    qt4reactor.install()
-except:
-    from twisted.internet import reactor
+from twisted.internet import reactor
 
-from . import acl, behaviours, gui, core, db, misc
+from . import acl, behaviours, core, db, misc
